@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "pratos")
+@Table(name = "cardapio")
 public class Cardapio {
 
     @Id
@@ -19,6 +19,8 @@ public class Cardapio {
     private Boolean disponivel;
 
     private BigDecimal valor;
+
+    private Categoria categortia;
 
     @Column(name = "data_de_registro")
     private LocalDateTime dataDeRegistro = LocalDateTime.now();

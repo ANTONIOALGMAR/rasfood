@@ -4,11 +4,11 @@ import br.com.rasmoo.restarurante.entity.Cardapio;
 
 import javax.persistence.EntityManager;
 
-public class PratoDao {
+public class CardapioDao {
 
     private EntityManager entityManager;
 
-    public PratoDao (EntityManager entityManager){
+    public CardapioDao(EntityManager entityManager){
         this.entityManager = entityManager;
     }
 

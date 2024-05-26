@@ -1,15 +1,13 @@
 package br.com.rasmoo.restarurante.service;
 
-import br.com.rasmoo.restarurante.dao.PratoDao;
+import br.com.rasmoo.restarurante.dao.CardapioDao;
 import br.com.rasmoo.restarurante.entity.Cardapio;
 import br.com.rasmoo.restarurante.util.JPAUtil;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import java.math.BigDecimal;
 
-public class PratoService {
+public class CardapioService {
 
     public static void main(String[] args) {
 
@@ -26,22 +24,22 @@ public class PratoService {
         salmao.setValor(BigDecimal.valueOf(88.60));
 
         EntityManager entityManager = JPAUtil.getEntityManagerRasFood();
-        PratoDao pratoDao = new PratoDao(entityManager);
+        CardapioDao cardapioDao = new CardapioDao(entityManager);
         entityManager.getTransaction().begin();
-        pratoDao.cadastrar(risoto);
+        cardapioDao.cadastrar(risoto);
         entityManager.flush();
-        pratoDao.cadastrar(salmao);
+        cardapioDao.cadastrar(salmao);
         entityManager.flush();
-        System.out.println("O prato consultado foi: " + pratoDao.consultar(2));
-        System.out.println("O prato consultado foi: " + pratoDao.consultar(1));
+        System.out.println("O prato consultado foi: " + cardapioDao.consultar(2));
+        System.out.println("O prato consultado foi: " + cardapioDao.consultar(1));
 
-        pratoDao.excluir(salmao);
-        System.out.println("O prato consultado foi: " + pratoDao.consultar(2));
+        cardapioDao.excluir(salmao);
+        System.out.println("O prato consultado foi: " + cardapioDao.consultar(2));
 
         entityManager.clear();
         risoto.setValor(BigDecimal.valueOf(75.50));
-        pratoDao.atualizar(risoto);
-        System.out.println("O prato consultado foi: " + pratoDao.consultar(1));
+        cardapioDao.atualizar(risoto);
+        System.out.println("O prato consultado foi: " + cardapioDao.consultar(1));
 
 
     }
