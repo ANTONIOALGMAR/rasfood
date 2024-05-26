@@ -20,7 +20,8 @@ public class Cardapio {
 
     private BigDecimal valor;
 
-    private Categoria categortia;
+    @ManyToOne
+    private Categoria categoria;
 
     @Column(name = "data_de_registro")
     private LocalDateTime dataDeRegistro = LocalDateTime.now();
