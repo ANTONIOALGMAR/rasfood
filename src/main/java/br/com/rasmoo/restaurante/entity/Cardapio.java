@@ -1,4 +1,4 @@
-package br.com.rasmoo.restarurante.entity;
+package br.com.rasmoo.restaurante.entity;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -27,6 +27,14 @@ public class Cardapio {
     private LocalDateTime dataDeRegistro = LocalDateTime.now();
 
     public Cardapio() {
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 
     public Integer getId() {

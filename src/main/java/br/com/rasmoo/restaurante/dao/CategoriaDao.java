@@ -1,6 +1,6 @@
-package br.com.rasmoo.restarurante.dao;
+package br.com.rasmoo.restaurante.dao;
 
-import br.com.rasmoo.restarurante.entity.Categoria;
+import br.com.rasmoo.restaurante.entity.Categoria;
 
 import javax.persistence.EntityManager;
 import java.util.List;
@@ -10,6 +10,7 @@ public class CategoriaDao {
     private EntityManager entityManager;
 
     public CategoriaDao (EntityManager entityManager){
+
         this.entityManager = entityManager;
     }
 
@@ -18,6 +19,7 @@ public class CategoriaDao {
     }
 
     public Categoria consultarPorId(final Integer id){
+
         return this.entityManager.find(Categoria.class, id);
     }
 
